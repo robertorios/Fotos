@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<% if user_signed_in? && %>
+<%= current_user.email %>
+<%= @newuser %>
+<% end %>
+
+<h1>Listing Frames</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>Email</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Tags</th>
+      <th>Aws url</th>
+      <th>Sold times</th>
+      <th>Income</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @frames.each do |frame| %>
+      <tr>
+        <td><%= frame.artist %></td>
+        <td><%= frame.email %></td>
+        <td><%= frame.title %></td>
+        <td><%= frame.category %></td>
+        <td><%= frame.tags %></td>
+        <td><%= frame.aws_url %></td>
+        <td><%= frame.sold_times %></td>
+        <td><%= frame.income %></td>
+        <td><%= link_to 'Show', frame %></td>
+        <td><%= link_to 'Edit', edit_frame_path(frame) %></td>
+        <td><%= link_to 'Destroy', frame, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Frame', new_frame_path %>
+
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

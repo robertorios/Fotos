@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @frame.artist %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @frame.email %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @frame.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @frame.category %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @frame.tags %>
+</p>
+
+<p>
+  <strong>Aws url:</strong>
+  <%= @frame.aws_url %>
+</p>
+
+<p>
+  <strong>Sold times:</strong>
+  <%= @frame.sold_times %>
+</p>
+
+<p>
+  <strong>Income:</strong>
+  <%= @frame.income %>
+</p>
+
+<%= link_to 'Edit', edit_frame_path(@frame) %> |
+<%= link_to 'Back', frames_path %>
